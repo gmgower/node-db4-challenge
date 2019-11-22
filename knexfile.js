@@ -1,26 +1,33 @@
 // Update with your config settings.
-//? s10 term: knex init (create knexfile.js)
+//? s26 term: knex init (create knexfile.js)
 module.exports = {
 
   development: {
     client: 'sqlite3',
-    //? s11
+    //? s31
     useNullAsDefault: true,
     connection: {
-      //? s12
+      //? s32
       filename: './data/recipe.db3'
     },
-    //? s18 creates codebase method to create database
+    //? s33 creates codebase method to create database
     migrations: {
-      //? s19 create migration directory 
-      //? s20 term: knex (shows command)
-      //? s21 term: knex migrate:make recipe-schema
+      //? s34 createS migration directory 
+      //? s34a term: knex (shows command)
+      //? s34b term: knex migrate:make recipe-schema
 
       directory: './data/migrations'
     },
-    
+    //? s42 create seeds dir
+    seeds: {
+      directory: './data/seeds'
+      //? s43 term cmd: npx knex seed:make 00-cleanup
+    },
+    //? s57 create pool for foreign keys
+    pool: {
+      afterCreate: (conn, done) => {
+        conn.run('PRAGMA foreign_keys = ON', done)
+      }
+    }    
   },
-  
-
-
 };

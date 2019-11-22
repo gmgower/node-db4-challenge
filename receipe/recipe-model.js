@@ -3,7 +3,7 @@ const db = require('../data/db-config')
 
 //? s15
 function find() {
-    return db('users');
+    return db('recipes');
 }
 
 //? s18
@@ -18,18 +18,18 @@ function findPosts(id) {
 
 //? s21
 function add(recipeData){
-    return db('users').insert(recipeData)
+    return db('recipes').insert(recipeData)
 }
 
 //? s23
 function update(changes, id) {
-    return db('users').where({id}).update(changes);
+    return db('recipes').where({id}).update(changes);
 }
 
 
 //? s25
 function remove(id) {
-    return db('users').where({id}).del();
+    return db('recipes').where({id}).del();
 }
 
 

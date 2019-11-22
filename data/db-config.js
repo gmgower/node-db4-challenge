@@ -1,9 +1,9 @@
-//? s13 create db-config.js under data folder
-//? s14
+//? s27 create db-config.js under data folder
+//? s28
 const knex = require('knex');
 
-//? s15
+//? s29
 const config = require('../knexfile.js');
 
-//? s16
+//? s30
 module.exports = knex(config.development);
