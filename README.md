@@ -44,3 +44,15 @@ Build the following endpoints. Write any additional data access helpers as neede
 - `GET /api/recipes/:id/shoppingList`: a list of ingredients and quantites for a single recipe
 - `GET /api/recipes/:id/instructions`: a correctly ordered list of how to prepare a single recipe
 - `GET /api/ingredients/:id/recipes`: all recipes in the system that utilize a single ingredient 
+gmg
+
+# install dep
+// 1. npm init -y
+// 2. yarn 
+// 3. yarn add express
+// 4. package.json "server": "nodemon index.js"
+// 5.  yarn add nodemon --dev
+// 6. yarn add helmet --save
+// 7. (optional) cors: yarn add cors
+// 8. (installs knex sqlite3) yarn add knex sqlite3
+// 9. yarn add knex-cleaner
